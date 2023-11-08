@@ -6,6 +6,7 @@
 
 * {
   box-sizing: border-box;
+  
 }
 
 body {
@@ -17,11 +18,22 @@ body {
   min-height: 100vh;
   margin: 0;
   font-family: 'Lato', sans-serif;
+  
+}
+.header{
+  width: 350px;
+  text-align: center;
+  border-top: 1px solid transparent;
+  
 }
 
 .container {
   margin: 30px auto;
   width: 350px;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 2px ;
 }
 
 h1 {
@@ -39,7 +51,9 @@ h4 {
   margin: 0;
   text-transform: uppercase;
 }
-
+.balance{
+  text-align: center;
+}
 .inc-exp-container {
   background-color: #fff;
   box-shadow: var(--box-shadow);
@@ -86,10 +100,28 @@ input[type='number'] {
   padding: 10px;
   width: 100%;
 }
-
+.transButtons{
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+  display: flex;
+  gap: 5px;
+}
+.Tbutton{
+  cursor: pointer;
+  background-color: #9c88ff; 
+  border: transparent; 
+  box-shadow: var(--box-shadow);;
+  color: #fff;
+  font-size: 16px;
+  width: 50%;
+  padding: 5px;
+}
+.active{
+  background-color: #5237da; 
+}
 .btn {
   cursor: pointer;
-  background-color: #9c88ff;
+  background-color: #5237da;
   box-shadow: var(--box-shadow);
   color: #fff;
   border: 0;
@@ -99,7 +131,9 @@ input[type='number'] {
   padding: 10px;
   width: 100%;
 }
-
+.disabled{
+  background-color: #827ba5; 
+}
 .btn:focus,
 .delete-btn:focus {
   outline: 0;

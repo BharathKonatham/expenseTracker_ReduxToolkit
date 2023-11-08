@@ -2,8 +2,11 @@ import React from 'react'
 
 export const Header = () => {
   return (
-    <h2>
+    <div className='header'>
+      <h2>
        Expense Tracker 
-    </h2>
+      </h2>
+    </div>
+    
   )
 }
