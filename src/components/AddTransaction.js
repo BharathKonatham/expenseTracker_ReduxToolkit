@@ -4,6 +4,7 @@ export const AddTransaction = () => {
     const [text,setText] = useState('')
     const[amount,setAmount] = useState(0)
     const {AddTransaction} = useContext(GlobalContext)
+
     const onSubmit = (e)=>{
       e.preventDefault()
       const newTransaction = {
@@ -11,7 +12,8 @@ export const AddTransaction = () => {
         amount:parseInt(amount, 10),
         text 
       }
-     
+      setAmount(0)
+      setText('')
       AddTransaction(newTransaction)
     }
   return (
