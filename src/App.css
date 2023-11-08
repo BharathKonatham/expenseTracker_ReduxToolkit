@@ -52,7 +52,19 @@ h4 {
   text-transform: uppercase;
 }
 .balance{
-  text-align: center;
+  
+  position: relative;
+}
+.reset{
+  position: absolute;
+  left: 75%;
+  width: 25%;
+  font-size: 16px;
+  color: #fff;
+  background: #9c88ff;
+  border: transparent;
+  box-shadow: var(--box-shadow);
+  border-radius: 2px;
 }
 .inc-exp-container {
   background-color: #fff;

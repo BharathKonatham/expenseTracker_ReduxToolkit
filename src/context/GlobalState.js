@@ -29,7 +29,14 @@ export const GlobalProvider = ({children})  =>{
         })
     }
 
-    return(<GlobalContext.Provider value={{transactions:state.transactions,deleteTransaction,AddTransaction}}>
+    function resetTransactions(){
+        dispatch({
+            type:'RESET',
+            payload:[]
+        })
+    }
+
+    return(<GlobalContext.Provider value={{transactions:state.transactions,deleteTransaction,AddTransaction,resetTransactions}}>
         {children}
     </GlobalContext.Provider>)
 }

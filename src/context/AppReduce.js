@@ -13,6 +13,12 @@ export default (state,action) =>{
                 transactions: [action.payload,...state.transactions]
             }
         }
+        case 'RESET':{
+            return{
+                ...state,
+                transactions:action.payload
+            }
+        }
 
         default:return state;
     }
