@@ -1,7 +1,11 @@
-import React, { useContext } from 'react'
-import { GlobalContext } from '../context/GlobalState'
+import React from 'react'
+
+import { useSelector } from 'react-redux'
+
 export const IncomeExpenses = () => {
-  const {transactions} = useContext(GlobalContext)
+  //const {transactions} = useContext(GlobalContext)
+  const transactions = useSelector((state)=>state.transaction.transactions)
+  
   let amounts = transactions.map(transaction=>transaction.amount)
   let Income = amounts.filter((value)=>value>0).reduce((total,amount)=>total+amount,0).toFixed(2)
   let Expense = Math.abs(amounts.filter((value)=>value<0).reduce((total,amount)=>total+amount,0)).toFixed(2)

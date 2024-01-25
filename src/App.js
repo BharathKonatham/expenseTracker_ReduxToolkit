@@ -4,11 +4,11 @@ import { Balance } from './components/Balance';
 import { IncomeExpenses } from './components/IncomeExpenses';
 import { TransactionList } from './components/TransactionList';
 import { AddTransaction } from './components/AddTransaction';
-import { GlobalProvider } from './context/GlobalState';
-
+import {store} from './redux/store'
+import { Provider } from 'react-redux';
 function App() {
   return (
-    <GlobalProvider>
+    <Provider store={store} >
       <Header />
       <div className='container'>
         <Balance />
@@ -16,7 +16,7 @@ function App() {
         <TransactionList />
         <AddTransaction />
       </div>
-    </GlobalProvider>
+    </Provider>
   );
 }
 

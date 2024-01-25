@@ -1,10 +1,11 @@
-import React, { useContext, useState } from 'react'
-import { GlobalContext } from '../context/GlobalState'
-import { toBeRequired } from '@testing-library/jest-dom/matchers'
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { AddNewTransaction } from '../redux/transactionSlice'
+
 export const AddTransaction = () => {
     const [text,setText] = useState('')
     const[amount,setAmount] = useState('')
-    const {AddTransaction} = useContext(GlobalContext)
+    const dispatch = useDispatch()
     const [buttonState,setbuttonState] = useState({
       incomeStatus: '',
       expenseStaus:'',
@@ -24,8 +25,7 @@ export const AddTransaction = () => {
         incomeStatus: '',
         type: ''
       })
-      console.log(buttonState)
-      AddTransaction(newTransaction)
+      dispatch(AddNewTransaction(newTransaction))
     }
     const setButtonsPositive = (e)=>{
       e.preventDefault()
@@ -43,7 +43,7 @@ export const AddTransaction = () => {
         type: buttonState.type === 'negative'? '':'negative'
       })
     }
-  const isDisabled = (text.length == 0 || amount.length == 0 || buttonState.type.length==0)?true:false;
+  const isDisabled = (text.length === 0 || amount.length === 0 || buttonState.type.length === 0)?true:false;
   return (
     <>
     <h3>Add new transaction</h3>
