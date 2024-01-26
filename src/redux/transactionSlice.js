@@ -9,18 +9,16 @@ export const transactionSlice = createSlice({
   reducers: {
     deleteTransaction: (state,action) => {
         state.transactions=state.transactions.filter(transactions=>transactions.id !== action.payload)
-    
     },
     AddNewTransaction: (state,action) => {
     
-       
         state.transactions = [action.payload,...state.transactions]
         
     },
     resetTransactions: (state) => {
         
             
-            state.transactions= []
+        state.transactions= []
         
     },
     

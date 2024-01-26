@@ -43,7 +43,9 @@ export const AddTransaction = () => {
         type: buttonState.type === 'negative'? '':'negative'
       })
     }
-  const isDisabled = (text.length === 0 || amount.length === 0 || buttonState.type.length === 0)?true:false;
+   
+  const isDisabled = ((text.length === 0 || amount.length === 0 || buttonState.type.length === 0 || amount <= 0))?true:false;
+  console.log(isDisabled)
   return (
     <>
     <h3>Add new transaction</h3>
@@ -58,10 +60,10 @@ export const AddTransaction = () => {
             <button className={`income Tbutton ${buttonState.incomeStatus}`} onClick={setButtonsPositive} >Income</button> 
             <button className={`income Tbutton ${buttonState.expenseStaus}`} onClick={setButtonsNegative} >Expense</button>
             </div>
-            <input type='number' placeholder='Enter Amount...' value={amount} onChange={e => setAmount(e.target.value)} />
+            <input type='number' placeholder='Enter Amount...' value={amount} onChange={e => {setAmount(e.target.value)}} />
         </div>
         <div className='form-control'>
-          <button className={`btn ${isDisabled?'disabled':''}`} onClick={onSubmit} disabled={isDisabled}>Add Transaction</button>
+          <button className={`btn ${isDisabled?'disabled':''}`} onClick={ onSubmit} disabled={isDisabled}>Add Transaction</button>
         </div>
     </form>
     </>
